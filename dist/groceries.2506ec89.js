@@ -1,0 +1,9 @@
+class Toast{static show(t={}){return new Toast().show(t)}show(t={}){let e={info:"ℹ️",success:"✅",warning:"⚠️",danger:"\uD83D\uDEA8"},o={type:"info",position:"right",duration:3e3},i={...o,...t,id:this._generateUUID()};null===t.type&&(i.type=o.type),null===t.position&&(i.position=o.position),null===t.duration&&(i.duration=o.duration),i.icon=i.fonticon?`<span class="${i.fonticon}"></span>`:e[i.type]||e[o.type],i.title=i.title||i.type.charAt(0).toUpperCase()+i.type.slice(1);let n=document.getElementById(`toast-container-${i.position}`);n||((n=document.createElement("div")).id=`toast-container-${i.position}`,n.className=`toast-container ${i.position}`,document.body.appendChild(n));let s=document.createElement("div");s.setAttribute("id",i.id),s.setAttribute("role","alert"),s.className=`${i.type} ${i.className||""}`.trim(),s.innerHTML=`
+            <header>
+                <span class="close"></span>
+                ${i.icon}&nbsp;${i.title}
+            </header>
+            <p role="alertdialog">${this._escapeHtml(i.message)}</p>
+            ${i.footer?`<footer>${i.footer}</footer>`:""}
+        `,s.style.opacity="0",s.style.transition="opacity 0.2s",n.appendChild(s),s.addEventListener("click",()=>{this.dismiss(i.id)}),requestAnimationFrame(()=>{s.style.opacity="1"}),i.duration>0&&setTimeout(()=>{this.dismiss(i.id)},i.duration)}dismiss(t){let e=document.getElementById(t);e&&e.parentNode&&(e.style.opacity="0",setTimeout(()=>{e.parentNode&&e.remove()},300))}_escapeHtml(t){let e=document.createElement("div");return e.textContent=t,e.innerHTML}_generateUUID(){return"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,t=>{let e=16*Math.random()|0;return("x"===t?e:3&e|8).toString(16)})}}"undefined"!=typeof module&&module.exports&&(module.exports=Toast),"undefined"!=typeof window&&(window.Toast=Toast);
+//# sourceMappingURL=groceries.2506ec89.js.map

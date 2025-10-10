@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>TangoMan | Groceries</title>
+    <!-- Disables Internet Explorer compatibility mode (for IE 9 and IE 8 support) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Sets page scale to 1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+    <!-- https://picocss.com/docs -->
+    <!-- https://github.com/picocss/pico/blob/main/css/pico.css -->
+    <link rel="stylesheet" href="./css/pico.css">
+    <link rel="stylesheet" href="./css/pivot.css">
+    <link rel="stylesheet" href="./scss/styles.scss">
+</head>
+<body>
+    <header id="header" role="banner">
+        <div class="container" role="navigation">
+            <a class="contrast no-decoration" href="#top" aria-label="Home">
+                <strong>🛒&nbsp;Groceries</strong>
+            </a>
+            <nav>
+                <div role="menu">
+                    <ul role="toolbar">
+                        <li role="menuitem">
+                            <button type="button" id="export-button" title="Download item list as JSON">💾</button>
+                        </li>
+                        <li role="menuitem">
+                            <!-- Use a label bound to the file input for best mobile compatibility -->
+                            <label role="button" id="import-button" for="import-file" class="button" title="Upload and merge items from JSON" aria-label="Import items">📥</label>
+                            <!-- Visually hidden but accessible file input -->
+                            <input type="file" id="import-file" accept="application/json,.json" aria-label="Choose JSON file to import" />
+                        </li>
+                    </ul>
+                </div>
+                <span class="divider"></span>
+                <ul role="toolbar">
+                    <li role="menuitem">
+                        <a class="contrast" aria-label="GitHub repository" href="https://github.com/TangoMan75/groceries"
+                            target="_blank" rel="noopener noreferrer nofollow">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24.25" viewBox="0 0 496 512">
+                                <path
+                                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                                </path>
+                            </svg>
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a class="contrast" aria-label="Linktree" href="https://linktr.ee/tangoman75" target="_blank" rel="noopener noreferrer nofollow">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewbox="0 0 512 512">
+                                <path d="m 293.03983,124.86333 85.43328,-87.822493 49.58696,50.781656 -89.61488,85.432917 H 464.5043 v 70.49778 H 337.84727 l 90.2128,87.62192 -49.58696,49.78625 L 255.99954,258.0899 133.52615,381.16136 83.939189,331.5744 174.15144,243.95066 H 47.4957 V 173.25541 H 173.55409 L 83.939189,87.822493 133.52615,37.040837 218.95925,124.86333 V 0 h 74.08058 z m -74.08058,219.85563 h 74.08058 V 512 h -74.08058 z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a id="theme-toggle" class="contrast" aria-label="Turn on dark mode" href="#!">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 32 32"
+                                fill="currentColor">
+                                <clipPath id="theme-toggle-cutout">
+                                    <path d="M0-11h25a1 1 0 0017 13v30H0Z"></path>
+                                </clipPath>
+                                <g clip-path="url(#theme-toggle-cutout)">
+                                    <circle cx="16" cy="16" r="8.4"></circle>
+                                    <path
+                                        d="M18.3 3.2c0 1.3-1 2.3-2.3 2.3s-2.3-1-2.3-2.3S14.7.9 16 .9s2.3 1 2.3 2.3zm-4.6 25.6c0-1.3 1-2.3 2.3-2.3s2.3 1 2.3 2.3-1 2.3-2.3 2.3-2.3-1-2.3-2.3zm15.1-10.5c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3zM3.2 13.7c1.3 0 2.3 1 2.3 2.3s-1 2.3-2.3 2.3S.9 17.3.9 16s1-2.3 2.3-2.3zm5.8-7C9 7.9 7.9 9 6.7 9S4.4 8 4.4 6.7s1-2.3 2.3-2.3S9 5.4 9 6.7zm16.3 21c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3zm2.4-21c0 1.3-1 2.3-2.3 2.3S23 7.9 23 6.7s1-2.3 2.3-2.3 2.4 1 2.4 2.3zM6.7 23C8 23 9 24 9 25.3s-1 2.3-2.3 2.3-2.3-1-2.3-2.3 1-2.3 2.3-2.3z">
+                                    </path>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main role="main" class="container">
+        <section>
+            <!-- Pivot Tabs -->
+            <ul class="tabs" role="tablist">
+                <li id="shopping-tab" role="tab" aria-controls="shopping-panel">
+                    🛒&nbsp;Shopping&nbsp;List
+                </li>
+                <li id="manage-tab" role="tab" aria-controls="manage-panel">
+                    ✏️&nbsp;Manage&nbsp;Items
+                </li>
+            </ul>
+
+            <!-- Tab 1: Shopping List Panel -->
+            <article id="shopping-panel" role="tabpanel" aria-labelledby="shopping-tab">
+                <header>
+                    <button id="clear-shopping" type="button">🧹&nbsp;Clear&nbsp;Shopping&nbsp;List</button>
+                </header>
+                <!-- Grocery list table -->
+                <table id="shopping-table" class="striped">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Item</th>
+                            <th>Price (€)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="shopping-tbody">
+                        <!-- Items will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </article>
+
+            <!-- Tab 2: Manage Items Panel -->
+            <article id="manage-panel" role="tabpanel" aria-labelledby="manage-tab">
+                <header>
+                    <div class="grid">
+                        <select id="manage-filter-store">
+                            <option value="">All stores</option>
+                            <option value="auchan">Auchan</option>
+                            <option value="inter">Intermarché</option>
+                            <option value="picard">Picard</option>
+                        </select>
+                        <button type="button" id="create-button" class="success">✨&nbsp;Create&nbsp;item</button>
+                    </div>
+                </header>
+                <!-- Grocery list table -->
+                <table id="grocery-table" class="striped">
+                    <thead>
+                        <tr>
+                            <th>Store</th>
+                            <th>Item</th>
+                            <th>Price&nbsp;(€)</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="grocery-tbody">
+                        <!-- Items will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <!-- Item Modal -->
+        <dialog id="item-modal">
+            <article>
+                <header>
+                    <button aria-label="Close" rel="prev" id="close-modal"></button>
+                    <p><strong id="modal-title">Add New Item</strong></p>
+                </header>
+
+                <!-- Add Item Form -->
+                <form id="add-item-form" style="display: block;">
+                    <label for="item-name">Item Name</label>
+                    <input type="text" id="item-name" name="item" placeholder="Enter item name..." required>
+                    <div class="grid">
+                        <div>
+                            <label for="store-select">Store</label>
+                            <select id="store-select" name="store" required>
+                                <option value="">Select store...</option>
+                                <option value="auchan">Auchan</option>
+                                <option value="inter">Intermarché</option>
+                                <option value="picard">Picard</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="item-price">Price (€)</label>
+                            <input type="number" id="item-price" name="price" step="0.01" min="0" placeholder="0.00">
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Edit Item Form -->
+                <form id="edit-item-form" style="display: none;">
+                    <input type="hidden" id="edit-item-id" name="id">
+                    <label for="edit-item-name">Item Name</label>
+                    <input type="text" id="edit-item-name" name="item" placeholder="Enter item name..." required>
+                    <div class="grid">
+                        <div>
+                            <label for="edit-store-select">Store</label>
+                            <select id="edit-store-select" name="store" required>
+                                <option value="">Select store...</option>
+                                <option value="auchan">Auchan</option>
+                                <option value="inter">Intermarché</option>
+                                <option value="picard">Picard</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="edit-item-price">Price (€)</label>
+                            <input type="number" id="edit-item-price" name="price" step="0.01" min="0" placeholder="0.00">
+                        </div>
+                    </div>
+                </form>
+
+                <footer class="grid">
+                    <button type="button" id="submit-modal" class="success">💾 Add Item</button>
+                    <button type="button" id="cancel-modal" class="danger">⛔ Cancel</button>
+                </footer>
+            </article>
+        </dialog>
+    </main>
+    <footer role="contentinfo" class="container footer">
+        <ul>
+            <li>
+                <p>&copy; 2025 Matthias Morin</p>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <small>
+                    <span class="icon icon-search"></span>&nbsp;
+                    Author : <a href="https://tangoman.io" target="_blank" rel="noopener noreferrer nofollow">Matthias
+                        Morin</a>
+                </small>
+            </li>
+            <li>
+                <small>
+                    <span class="icon icon-search"></span>&nbsp;
+                    Made with : <a href="https://picocss.com" target="_blank"
+                    rel="noopener noreferrer nofollow">Pico CSS</a>
+                </small>
+            </li>
+            <li>
+                <small>
+                    <span class="icon icon-search"></span>&nbsp;
+                    Made with : <a href="https://tangoman75.github.io/pivot" target="_blank"
+                    rel="noopener noreferrer nofollow">Pivot CSS</a>
+                </small>
+            </li>
+            <li>
+                <small>
+                    <span class="icon icon-search"></span>&nbsp;
+                    Icons : <a href="https://fontawesome.com" target="_blank" rel="noopener noreferrer nofollow">Font Awesome by Dave Gandy</a>
+                    License <a href="http://scripts.sil.org/OFL" target="_blank" rel="noopener noreferrer nofollow">SIL OFL 1.1</a>
+                </small>
+            </li>
+            <li>
+                <small>
+                    <span class="icon icon-search"></span>&nbsp;
+                    Icons :
+                    <a href="https://fonts.google.com/noto/specimen/Noto+Color+Emoji" target="_blank"
+                    rel="noopener noreferrer nofollow">Google Noto Color Emoji</a>
+                    License <a href="http://scripts.sil.org/OFL" target="_blank" rel="noopener noreferrer nofollow">SIL OFL 1.1</a>
+                </small>
+            </li>
+        </ul>
+    </footer>
+    <script type="text/javascript" src="./js/pivot.js"></script>
+    <script type="text/javascript" src="./js/toast.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module">
+        // Service Worker: debugging helpers to avoid stale caches during development/testing
+        if ('serviceWorker' in navigator) {
+            const url = new URL(location.href);
+            const disableSW = url.searchParams.has('no-sw');
+
+            // If ?no-sw is present, unregister all SWs and do NOT re-register
+            if (disableSW) {
+                navigator.serviceWorker.getRegistrations().then(regs => {
+                    regs.forEach(r => r.unregister());
+                    console.log('[SW] Unregistered all service workers due to ?no-sw flag');
+                }).catch(() => {});
+            } else {
+                // Try to update existing registrations first to get latest assets
+                navigator.serviceWorker.getRegistrations().then(regs => {
+                    regs.forEach(r => r.update().catch(() => {}));
+                }).catch(() => {});
+
+                // Register service worker for PWA functionality
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register(new URL('./service-worker.js', import.meta.url))
+                        .then((registration) => {
+                            console.log('[SW] registered', registration);
+                        })
+                        .catch((registrationError) => {
+                            console.log('[SW] registration failed', registrationError);
+                        });
+                });
+            }
+        }
+
+        // PWA install prompt
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+
+            // Show install button
+            const installBtn = document.createElement('button');
+            installBtn.textContent = '📱 Install App';
+            installBtn.className = 'install-btn';
+            installBtn.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 1000;
+                background: var(--pico-primary);
+                color: white;
+                border: none;
+                padding: 0.75rem 1rem;
+                border-radius: var(--pico-border-radius);
+                cursor: pointer;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            `;
+
+            installBtn.addEventListener('click', () => {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                        installBtn.remove();
+                    }
+                    deferredPrompt = null;
+                });
+            });
+
+            document.body.appendChild(installBtn);
+        });
+    </script>
+</body>
+</html>

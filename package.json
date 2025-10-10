@@ -1,0 +1,23 @@
+{
+  "name": "tangoman-groceries",
+  "version": "0.1.0",
+  "licence": "MIT",
+  "description": "Simple, offline-first grocery list in vanilla JavaScript.",
+  "scripts": {
+    "watch": "parcel ./src/index.html --open",
+    "build": "parcel build ./src/index.html --public-url ./",
+    "predeploy": "yarn build",
+    "deploy": "git push origin \"$(git subtree split --prefix dist HEAD)\":gh-pages --force"
+  },
+  "devDependencies": {
+    "@parcel/packager-raw-url": "2.15.4",
+    "@parcel/transformer-sass": "2.15.4",
+    "@parcel/transformer-webmanifest": "2.15.4",
+    "parcel": "^2.15.4"
+  },
+  "keywords": [
+    "groceries",
+    "shopping list",
+    "todo"
+  ]
+}

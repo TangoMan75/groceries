@@ -1,0 +1,167 @@
+# Windsurf Rules for Javascript Project
+
+## no-abbreviations
+
+Avoid using abbreviations in code identifiers and comments. Use full, descriptive terms.
+examples = Use `button` instead of `btn`, `container` instead of `cnt`, `navigation` instead of `nav`
+
+---
+
+## Readme
+
+README.md must follow the above template:
+
+```
+![GH language](https://img.shields.io/github/languages/top/[USERNAME]/[REPOSITORY])
+[![GH release](https://img.shields.io/github/v/release/[USERNAME]/[REPOSITORY])](https://github.com/[USERNAME]/[REPOSITORY]/releases)
+![GH license](https://img.shields.io/github/license/[USERNAME]/[REPOSITORY])
+![GH stars](https://img.shields.io/github/stars/[USERNAME]/[REPOSITORY])
+[![CI Status](https://github.com/[USERNAME]/[REPOSITORY]/workflows/[WORKFLOW_NAME]/badge.svg)](https://github.com/[USERNAME]/[REPOSITORY]/actions/workflows/[WORKFLOW_FILE].yml)
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2F[USERNAME]%2F[REPOSITORY]&labelColor=%23697689&countColor=%2337d67a&style=flat)
+
+[PROJECT\_NAME]
+===============
+
+<img src="src/favicon/[PROJECT\_SVG\_ICON].svg" align="left" width="96" style="margin-right: 1em">
+
+[PROJECT\_TAG\_LINE]
+--------------------
+
+[A short description of the project].
+
+🌐 [PROJECT\_URL]
+-----------------
+
+- [](https://[AUTHOR\_GITHUB\_HANDLE].github.io/[PROJECT\_NAME]/)
+
+![](./images/[PROJECT\_ANIMATED\_GIF].gif)
+
+📚 Extra Documentation
+----------------------
+
+Documentation can be found here :
+
+- [[DOCUMENTATION_URL_TEXT]](./docs)
+
+🚀 Features
+-----------
+
+### ⚡ [CATEGORY_1_NAME]
+
+1. **[Feature 1 Title]:** [Short description of feature 1].
+2. **[Feature 2 Title]:** [Short description of feature 2].
+3. **[Feature 3 Title]:** [Short description of feature 3].
+
+### ⚡ [CATEGORY_2_NAME]
+
+1. **[Feature 1 Title]:** [Short description of feature 1].
+2. **[Feature 2 Title]:** [Short description of feature 2].
+3. **[Feature 3 Title]:** [Short description of feature 3].
+
+📡 API Documentation
+--------------------
+
+[API Documentation].
+
+1. **[GET/POST] [Route 1]:** [Short description of expected response].
+2. **[GET/POST] [Route 2]:** [Short description of expected response].
+3. **[GET/POST] [Route 3]:** [Short description of expected response].
+
+📦 Installation
+---------------
+
+[A clear, step-by-step instructions on how to setup project].
+
+1. **[Step 1 Title]:** [Short instruction].
+2. **[Step 2 Title]:** [Short instruction].
+3. **[Step 3 Title]:** [Short instruction].
+
+🛠️ Usage
+--------
+
+[A clear, step-by-step guide on how to use the project].
+
+1. **[Step 1 Title]:** [Short instruction].
+2. **[Step 2 Title]:** [Short instruction].
+3. **[Step 3 Title]:** [Short instruction].
+
+🖇️ Dependencies / Requirements
+------------------------------
+
+**[PROJECT\_NAME]** requires the following dependencies:
+
+1. [Dependency 1 Title].
+2. [Dependency 2 Title].
+3. [Dependency 3 Title].
+
+🐞 Troubleshoot
+---------------
+
+[A clear, step-by-step guide on how to troubleshoot the project].
+
+1. **[Issue 1 Title]:** [Short troubleshooting instruction].
+2. **[Issue 2 Title]:** [Short troubleshooting instruction].
+3. **[Issue 3 Title]:** [Short troubleshooting instruction].
+
+🧪 Testing Strategy
+-------------------
+
+[A clear, step-by-step guide on how to test the project].
+
+1. **[Test 1 Title]:** [Short instruction].
+2. **[Test 2 Title]:** [Short instruction].
+3. **[Test 3 Title]:** [Short instruction].
+
+🐛 Limitations
+--------------
+
+[Optional description of known bugs and limitations].
+
+1. ⚠️ **[Limitation 1 Titte]:** [Short description].
+2. ⚠️ **[Limitation 2 Titte]:** [Short description].
+3. ⚠️ **[Limitation 3 Titte]:** [Short description].
+
+📝 Notes
+--------
+
+[Optional notes].
+
+🤝 Contributing
+---------------
+
+Thank you for your interest in contributing to **[PROJECT\_NAME]**.
+
+Please review the [code of conduct](https://www.google.com/search?q=./CODE_OF_CONDUCT.md) and [contribution guidelines](https://www.google.com/search?q=./CONTRIBUTING.md) before starting to work on any features.
+
+If you want to open an issue, please check first if it was not [reported already](https://www.google.com/search?q=https://github.com/%5BUSERNAME%5D/%5BREPOSITORY%5D/issues) before creating a new one.
+
+📜 License
+----------
+
+Copyrights (c) [YEAR] &quot;Matthias Morin&quot; &lt;mat@tangoman.io&gt;
+
+[![License](https://img.shields.io/badge/Licence-MIT-green.svg)](LICENSE)
+Distributed under the MIT license.
+
+If you like **[PROJECT\_NAME]** please star, follow or tweet:
+
+[![GitHub stars](https://img.shields.io/github/stars/TangoMan75/shoe?style=social)](https://github.com/TangoMan75/shoe/stargazers)
+[![GitHub followers](https://img.shields.io/github/followers/TangoMan75?style=social)](https://github.com/TangoMan75)
+[![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FTangoMan75%2Fshoe)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FTangoMan75%2Fshoe)
+
+🙏 Acknowledgements
+-------------------
+
+- **[Project/Library 1 Name]:** [Short reason for acknowledgement].
+- **[Project/Library 2 Name]:** [Short reason for acknowledgement].
+- **[Project/Library 3 Name]:** [Short reason for acknowledgement].
+
+👋 Let's Build Your Next Project Together !
+-------------------------------------------
+
+Clean code. Clear communication.
+
+From first sketch to final launch, I've got your back.
+
+[![tangoman.io](https://img.shields.io/badge/✉️%20Get%20in%20touch%20now%20!-FD9400?style=for-the-badge)](https://tangoman.io)
+```

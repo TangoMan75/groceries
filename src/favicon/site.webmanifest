@@ -1,0 +1,26 @@
+{
+    "name": "TangoMan Groceries",
+    "short_name": "Groceries",
+    "description": "A grocery list PWA to manage your shopping items",
+    "start_url": "../",
+    "scope": "../",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "theme_color": "#1976d2",
+    "background_color": "#ffffff",
+    "categories": ["shopping", "productivity", "lifestyle"],
+    "icons": [
+        {
+            "src": "./android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "./android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
